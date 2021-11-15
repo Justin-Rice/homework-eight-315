@@ -15,7 +15,7 @@ footer{
      display: flex;
     // align-items: center;
     // justify-content: space-evenly;
-    position: absolute;
+    position: relative;
     left: 40px;
     bottom: 40px;
     right: 40px;
@@ -51,7 +51,7 @@ footer{
             width: 80px;
             //background-color: aqua;
             margin-left: 175px;
-            position: fixed;
+            position: absolute;
             right: 40px;
            
 
@@ -67,7 +67,7 @@ footer{
     
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
     footer{
      display: none;   
     }

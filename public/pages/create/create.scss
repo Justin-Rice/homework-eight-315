@@ -1,0 +1,126 @@
+.create {
+    width: 980px;
+    margin: 0 auto;
+    padding-bottom: 160px;
+    //min-height: 100vh;
+    //background-color:rebeccapurple;
+    margin-top: 200px;
+    h1{
+        font-family: Caveat;
+        font-size: 25px;
+        font-weight: 100;
+        position: relative;
+        top: 50px;
+    }
+    font-family: Lato;
+    font-size: 20px;
+
+    
+
+    .form{
+        position: relative;
+        .create-recipe{
+            margin: 0 auto;
+            text-align: center;
+            background-color: $dark-pink;
+            font-family: Caveat;
+            width: 250px;
+            height: 52px;
+           border-radius: 40px 40px;
+           line-height: 50px;
+           box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;  
+           font-size: 25px;
+           margin-top: 100px;
+        }
+
+        .add{
+            height: 38px;
+            width: 38px;
+            border-radius: 20px;
+            color: white;
+            background-color: $dark-pink;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            cursor: pointer;
+            position: absolute;
+            right: 5px;
+            bottom: 10px;
+           
+
+        
+        }
+        .attach{
+            height: 38px;
+            width: 110px;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            cursor: pointer;
+            font-family: Caveat;
+            top: 67px;
+            right: 5px;
+
+            background-color: $dark-pink;
+            position: absolute;
+
+
+
+        }
+
+        input{
+            width: 980px;
+            background-color: transparent;
+            outline: none;
+            border:none;
+            border-bottom: black solid 2px;
+            height: 30px;
+            font-family: Lato;
+            font-size: 20px;
+            margin-top: 80px;
+            color: black;
+            
+           
+        }
+        .title{
+            width: 100%;
+            position: relative;
+            top: 40px;
+         }
+
+        .general{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-direction: column;
+           // background-color: aqua;
+
+           
+        }
+        .ingredients{
+            margin-top: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-direction: column;
+           // background-color: aqua;
+            position: relative;
+           
+        }
+
+        .instructions{
+            position: relative;
+            margin-top: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-direction: column;
+           // background-color: aqua;
+        }
+       
+    }
+    
+   
+  }

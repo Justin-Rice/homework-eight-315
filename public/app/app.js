@@ -1,3 +1,7 @@
+ingredNum = 4;
+instructNum = 4;
+
+
 function route(){
     let hashTag = window.location.hash;
     let pageID = hashTag.replace("#/","");
@@ -6,10 +10,15 @@ function route(){
     if(!pageID){
         MODEL.changePage("home");
 
+    }else if(pageID === "browse"){
+        MODEL.changePage("browse");
+        MODEL.loadBrowse();
+      
+
     }else{
         MODEL.changePage(pageID);
-
     }
+
 
 }
 function initFirebase(){
@@ -186,6 +195,23 @@ function underlineActivePage(){
     
 }
 
+function addIngred(e){
+    $(".ingredients").append(`
+    <input id="ind${ingredNum}" type="text" placeholder="Ingredient #${ingredNum}" />
+    `)
+
+    ingredNum ++;  
+
+}
+
+function addInstruct(e){
+    $(".instructions").append(`
+    <input id="ind${instructNum}" type="text" placeholder="Instruction #${instructNum}" />
+    `)
+
+    instructNum ++;  
+
+}
 
 
 
@@ -194,6 +220,8 @@ $(document).ready(function(){
         initFirebase();
         initlistener();
         underlineActivePage();
+      //  browseRecipes();
+
         
         let app = firebase.app();
     }catch{
