@@ -242,7 +242,7 @@ nav {
 }
 
 @media screen and (max-width: 1000px) {
-  footer {
+  .main-footer {
     display: none;
   }
 
@@ -318,20 +318,20 @@ nav {
     display: none;
   }
 
-  footer {
+  .main-footer {
     display: none;
     font-size: 10px;
     height: 64px;
     margin: 0 auto;
     width: 300px;
   }
-  footer .copyright {
+  .main-footer .copyright {
     width: 100px;
     height: 20px;
     position: fixed;
     left: 20px;
   }
-  footer .middle {
+  .main-footer .middle {
     position: absolute;
     margin-top: 10px;
     margin-left: 30px;
@@ -348,11 +348,11 @@ nav {
     position: fixed;
     bottom: 20px;
   }
-  footer .middle div {
+  .main-footer .middle div {
     font-size: 10px;
     height: 12px;
   }
-  footer .social {
+  .main-footer .social {
     height: 20px;
     width: 60px;
     bottom: 70px;
@@ -717,7 +717,7 @@ nav {
 }
 .browse {
   width: 100%;
-  height: 1000px;
+  min-height: 100vh;
   margin: none;
   background-image: -webkit-gradient(linear, left top, right top, from(rgba(167, 232, 189, 0.6)), to(rgba(167, 232, 189, 0.6))), url("../img/recipe-hero.jpg");
   background-image: linear-gradient(to right, rgba(167, 232, 189, 0.6), rgba(167, 232, 189, 0.6)), url("../img/recipe-hero.jpg");
@@ -734,9 +734,7 @@ nav {
 .browse__holder {
   width: 1100px;
   margin: 0 auto;
-  height: 200px;
-  position: relative;
-  top: 195px;
+  margin-top: 200px;
 }
 .browse__holder h1 {
   margin-bottom: 40px;
@@ -852,8 +850,8 @@ nav {
 }
 
 @media screen and (max-width: 1050px) {
-  .browse {
-    height: 180vh;
+  .browse__holder {
+    margin-bottom: 40px;
   }
   .browse #recipe-flex {
     -webkit-box-orient: vertical;
@@ -863,8 +861,8 @@ nav {
   }
 }
 @media screen and (max-width: 600px) {
-  .browse {
-    height: 240vh;
+  .browse__holder {
+    margin-bottom: 70px;
   }
   .browse #recipe-flex {
     -webkit-box-orient: vertical;
@@ -1089,14 +1087,13 @@ nav {
 }
 .your {
   width: 100%;
-  height: 1000px;
+  margin: 0 auto;
+  min-height: 100vh;
   background-image: -webkit-gradient(linear, left top, right top, from(rgba(167, 232, 189, 0.6)), to(rgba(167, 232, 189, 0.6))), url("../img/recipe-hero.jpg");
   background-image: linear-gradient(to right, rgba(167, 232, 189, 0.6), rgba(167, 232, 189, 0.6)), url("../img/recipe-hero.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  -o-object-fit: fill;
-     object-fit: fill;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1107,9 +1104,7 @@ nav {
 .your__holder {
   width: 1100px;
   margin: 0 auto;
-  height: 200px;
-  position: relative;
-  top: 195px;
+  margin-top: 200px;
 }
 .your__holder h1 {
   margin-bottom: 40px;
@@ -1120,20 +1115,24 @@ nav {
 }
 .your__holder #your-flex {
   margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
-.your__holder #your-flex .recipe {
+.your__holder #your-flex .flex .recipe {
   width: 524px;
   height: 263px;
   margin-bottom: 50px;
@@ -1147,18 +1146,41 @@ nav {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
 }
-.your__holder #your-flex .recipe__image {
+.your__holder #your-flex .flex .recipe__image {
   width: 300px;
   height: 263px;
   border-radius: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
-.your__holder #your-flex .recipe__info {
+.your__holder #your-flex .flex .recipe .button {
+  text-align: center;
+  background-color: #FFD972;
+  width: 127px;
+  height: 52px;
+  border-radius: 40px 40px;
+  line-height: 50px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+          box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  margin: 0 auto;
+  font-family: Caveat;
+  font-size: 20px;
+  position: relative;
+}
+.your__holder #your-flex .flex .recipe__info {
   width: 224px;
   height: 263px;
   background-color: white;
   border-radius: 30px;
 }
-.your__holder #your-flex .recipe__info .name {
+.your__holder #your-flex .flex .recipe__info .name {
   margin: 0 auto;
   width: 130px;
   text-align: center;
@@ -1167,7 +1189,7 @@ nav {
   font-size: 15px;
   border-bottom: solid black 3px;
 }
-.your__holder #your-flex .recipe__info .description {
+.your__holder #your-flex .flex .recipe__info .description {
   margin: 0 auto;
   width: 138px;
   text-align: left;
@@ -1176,7 +1198,7 @@ nav {
   padding-top: 20px;
   padding-left: 10px;
 }
-.your__holder #your-flex .recipe__info .prep {
+.your__holder #your-flex .flex .recipe__info .prep {
   margin: 0 auto;
   width: 87px;
   display: -webkit-box;
@@ -1195,11 +1217,11 @@ nav {
   font-family: lato;
   font-size: 10px;
 }
-.your__holder #your-flex .recipe__info .prep img {
+.your__holder #your-flex .flex .recipe__info .prep img {
   width: 23px;
   height: 21px;
 }
-.your__holder #your-flex .recipe__info .prep .time {
+.your__holder #your-flex .flex .recipe__info .prep .time {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1211,7 +1233,7 @@ nav {
           justify-content: space-between;
   padding-top: 20px;
 }
-.your__holder #your-flex .recipe__info .prep .servings {
+.your__holder #your-flex .flex .recipe__info .prep .servings {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1223,12 +1245,38 @@ nav {
           justify-content: space-between;
   padding-top: 17px;
 }
-
+.your__holder #your-flex .flex .button-holder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 300px;
+}
+.your__holder #your-flex .flex .button-holder .button {
+  text-align: center;
+  background-color: #FFD972;
+  width: 127px;
+  height: 52px;
+  border-radius: 40px 40px;
+  line-height: 50px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+          box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  margin: 0 auto;
+  font-family: Caveat;
+  font-size: 20px;
+  margin-top: -50px;
+  margin-bottom: 20px;
+}
 @media screen and (max-width: 1050px) {
-  .browse {
-    height: 180vh;
+  .your__holder {
+    margin-bottom: 100px;
   }
-  .browse #recipe-flex {
+  .your #your-flex {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -1236,53 +1284,53 @@ nav {
   }
 }
 @media screen and (max-width: 600px) {
-  .browse {
-    height: 240vh;
+  .your__holder {
+    margin-bottom: 100px;
   }
-  .browse #recipe-flex {
+  .your #your-flex {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
     width: 300px;
   }
-  .browse #recipe-flex .recipe {
+  .your #your-flex .flex .recipe {
     width: 300px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .browse #recipe-flex .recipe__image {
+  .your #your-flex .flex .recipe__image {
     height: 150px;
     width: 300px;
     border-radius: 15px;
   }
-  .browse #recipe-flex .recipe__info {
+  .your #your-flex .flex .recipe__info {
     height: 170px;
     width: 300px;
     border-radius: 15px;
   }
-  .browse #recipe-flex .recipe__info .name {
+  .your #your-flex .flex .recipe__info .name {
     margin-top: 8px;
     padding-bottom: 15px;
     font-size: 10px;
     border-bottom: solid black 2px;
     height: 10px;
   }
-  .browse #recipe-flex .recipe__info .description {
+  .your #your-flex .flex .recipe__info .description {
     padding-top: 5px;
     font-size: 8px;
   }
-  .browse #recipe-flex .recipe__info .prep {
+  .your #your-flex .flex .recipe__info .prep {
     padding-top: none;
     padding-top: none;
     padding-bottom: 15px;
   }
-  .browse #recipe-flex .recipe__info .prep .time {
+  .your #your-flex .flex .recipe__info .prep .time {
     padding-top: 15px;
   }
-  .browse #recipe-flex .recipe__info .prep .servings {
+  .your #your-flex .flex .recipe__info .prep .servings {
     padding-top: 10px;
   }
 }

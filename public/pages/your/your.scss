@@ -1,18 +1,22 @@
 .your{
     width:  100% ;
-    height: 1000px;
-     background-image: linear-gradient(
+    margin: 0 auto;
+    min-height: 100vh;
+   
+    //overflow: visible;
+    background-image: linear-gradient(
        to right,  
          rgba(167, 232, 189, 0.6),
-         rgba(167, 232, 189, 0.6)
+         rgba(167, 232, 189, 0.6),
        ),
      url("../img/recipe-hero.jpg");
      background-repeat: no-repeat;
      background-position: center;
      background-size: cover;
-     object-fit: fill;
+    // object-fit: fill;
      display: flex;
   //align-items: center;
+  //padding-bottom: 40px;
      justify-content: space-evenly;
   
       &__holder{
@@ -20,9 +24,10 @@
           margin: 0 auto;
          // background-color: red;
          
-          height: 200px;
-          position: relative;
-          top: 195px;
+         // height: 200px;
+        //   position: relative;
+        //   top: 250px;
+        margin-top: 200px;
           h1{
               margin-bottom: 40px;
               font-weight: 100;
@@ -34,14 +39,19 @@
          
   
               #your-flex{
+                margin: 0 auto;
+                //display: flex;
+                align-items: center;
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                //background-color: green;
+                flex-wrap: wrap;
+                flex-direction: row;
                 
-                  margin: 0 auto;
-                  display: flex;
-                  align-items: center;
-                  justify-content: space-between;
-                  width: 100%;
-                 // background-color: green;
-                  flex-wrap: wrap;
+                .flex{
+                    
+
   
                   .recipe{
                       width: 524px;
@@ -58,7 +68,29 @@
                         height: 263px;
                         //background-color: royalblue   ;
                         border-radius: 30px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-evenly;
+                        
+
+                       
   
+                    }
+
+                    .button{
+                        text-align: center;
+                        background-color: $yellow;
+                        width: 127px;
+                        height: 52px;
+                        border-radius: 40px 40px;
+                        line-height: 50px;
+                        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;   
+                        //display: none;
+                        margin: 0 auto;
+                        font-family: Caveat;
+                        font-size: 20px;
+                        
+                        position: relative;
                     }
   
                     &__info{
@@ -122,9 +154,55 @@
                     }
   
                   }
+                  .button-holder{
+                    //background-color: red;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    width: 300px;
+                
+                    //position: absolute;
+                    //: relative;
+                   // right: 500px;
+
+                    .button{
+                      text-align: center;
+                      background-color: $yellow;
+                      width: 127px;
+                      height: 52px;
+                      border-radius: 40px 40px;
+                      line-height: 50px;
+                      box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;   
+                      //display: none;
+                      margin: 0 auto;
+                      font-family: Caveat;
+                      font-size: 20px;
+                      margin-top: -50px;
+                      margin-bottom: 20px;
+                      
+                    //   position: absolute;
+                    //   bottom: 10px;
+
+
+                      #edit{
+                          //left :50px;
+                          
+                      }
+
+                      #delete{
+
+                      }
+                      
+
+                    }
+
+                }
+                  
+                  }
               
   
               }
+              
   
   
           
@@ -136,25 +214,31 @@
   
   @media screen and (max-width: 1050px) {
   
-      .browse{
-          height: 180vh;
-  
-          #recipe-flex{
+      .your{
+           //height: 180vh;
+           &__holder{
+            margin-bottom: 100px ;
+        }
+          #your-flex{
               flex-direction: column;
               //width: 300px;
-  
+   
           }
       }
   }
   
   @media screen and (max-width: 600px) {
-      .browse{
-          height: 240vh;
+      .your{
+         // height: 220vh;
+
+         &__holder{
+            margin-bottom: 100px ;
+        }
   
-      #recipe-flex{
+          #your-flex{
           flex-direction: column;
           width: 300px;
-  
+                .flex{
           .recipe{
               width: 300px;
               flex-direction: column;
@@ -204,6 +288,7 @@
   
               }
           }
+        }
       }
   
   }

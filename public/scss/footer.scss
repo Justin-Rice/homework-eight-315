@@ -70,7 +70,7 @@
 }
 
 @media screen and (max-width: 1000px) {
-    footer{
+    .main-footer{
      display: none;   
     }
 
@@ -149,7 +149,7 @@
     .tablet-footer{
         display: none;
     }
-    footer{
+    .main-footer{
         display: none;
         font-size: 10px;
         //display: block;

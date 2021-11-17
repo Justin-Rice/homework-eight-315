@@ -1,6 +1,6 @@
 .browse{
   width:  100% ;
-  height: 1000px;
+  min-height: 100vh;
   margin: none;
    background-image: linear-gradient(
      to right,  
@@ -21,9 +21,10 @@
         margin: 0 auto;
        // background-color: red;
        
-        height: 200px;
-        position: relative;
-        top: 195px;
+       // height: 200px;
+        // position: relative;
+        // top: 195px;
+        margin-top: 200px;
         h1{
             margin-bottom: 40px;
             font-weight: 100;
@@ -138,7 +139,11 @@
 @media screen and (max-width: 1050px) {
 
     .browse{
-        height: 180vh;
+        //height: 180vh;
+
+        &__holder{
+            margin-bottom: 40px ;
+        }
 
         #recipe-flex{
             flex-direction: column;
@@ -150,7 +155,11 @@
 
 @media screen and (max-width: 600px) {
     .browse{
-        height: 240vh;
+        //height: 240vh;
+
+        &__holder{
+            margin-bottom: 70px ;
+        }
 
     #recipe-flex{
         flex-direction: column;
