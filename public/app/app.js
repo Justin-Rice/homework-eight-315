@@ -1,5 +1,18 @@
-ingredNum = 4;
-instructNum = 4;
+var ingredNum = 4;
+var instructNum = 4;
+var loggedIn = false;
+
+var USER_RECIPES = [
+    {
+        "recipeName": "Supreme Pizza",
+        "recipeDescription": "Make Pizza night super duper out of this world wigth homemad pizza. this recipe is supreme with vegetables and two types of meat",
+        "recipeImage": "recipe-pizza.jpg",
+        "recipePrep": " 1h 24 min",
+        "recipeServings": "4"
+      }
+      
+
+];
 
 
 function route(){
@@ -11,12 +24,15 @@ function route(){
         MODEL.changePage("home");
 
     }else if(pageID === "browse"){
-        MODEL.changePage("browse");
-        MODEL.loadBrowse();
-      
+        MODEL.changePage("browse", MODEL.loadBrowse);      
 
+    }else if(pageID === "your"){
+        MODEL.changePage("your");
+        MODEL.yourRecipe();      
     }else{
         MODEL.changePage(pageID);
+
+
     }
 
 
@@ -26,6 +42,8 @@ function initFirebase(){
     .auth()
     .onAuthStateChanged(function(user){
         if(user){
+
+            loggedIn = true;
             
             $("#logOut").css("display","block");
             $("#login").css("display","none");

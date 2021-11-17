@@ -4,11 +4,13 @@
 .tablet-footer{
     display: none;
 }
-footer{
-    width: 80vl;    
+.main-footer{
+    //margin: 0 auto;
+    width: 90vw;    
     font-family: Lato-It;
     font-size: 15px;
     color: #393939;
+    margin: 0 auto;
 
 
         height: 30px;
@@ -30,11 +32,11 @@ footer{
             display: flex;
             //align-items: center;
             justify-content: space-between;
-            width: 637px;
+            width: 59vw;
             padding-right: 130px;
             position: relative;
             margin: 0 auto;
-            //background-color: rebeccapurple;
+           // background-color: rebeccapurple;
             div{
                 height: 19px;
             //    background-color: green;
