@@ -118,9 +118,50 @@
             justify-content: space-evenly;
             flex-direction: column;
            // background-color: aqua;
+        }     
+    }  
+}
+
+@media screen and (max-width: 1050px) {
+    .create{
+
+        width: 500px;
+
+    .general, .ingredients, .instructions{
+
+        input{
+            width: 500px;
         }
-       
     }
-    
-   
-  }
+
+    }
+
+
+
+
+
+
+}
+
+
+
+@media screen and (max-width: 550px) {
+    .create{
+
+        width: 300px;
+
+    .general, .ingredients, .instructions{
+
+        input{
+            width: 300px;
+        }
+    }
+
+    }
+
+
+
+
+
+
+}

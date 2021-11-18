@@ -11,7 +11,7 @@ var MODEL = (function(){
         
     }
 
-    var _loadBrowse = function(){
+ var _loadBrowse = function(){
         $.getJSON("data/data.json", function(recipes){
             $.each(recipes.PUBLIC_RECIPES, function(index, recipe){
                 //console.log(recipe.recipeImage)
@@ -44,13 +44,14 @@ var MODEL = (function(){
   });
  }
 
- var _yourRecipe = function(){
+ var _loadYour = function(){
+
   // $.getJSON("data/data.json", function(recipes){
 
     $.each(USER_RECIPES, function(index, recipe){
         //console.log(recipe.recipeImage)
-        console.log(recipe);
-        console.log(recipe.recipeName)
+        // console.log(recipe);
+        // console.log(recipe.recipeName)
         $("#your-flex").append(`
        <div class="flex">
         <div class="recipe">
@@ -59,8 +60,10 @@ var MODEL = (function(){
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;">
+        <a href="#/view">
         <div class="button" id="${index}" onclick="viewRecipe(${index})">View
         </div>
+        </a>
         </div>
         <div class="recipe__info">
           <div class="name">${USER_RECIPES[index].recipeName}</div>
@@ -99,10 +102,21 @@ var MODEL = (function(){
 
  }
 
+ var _loadView = function(index){
+  $("#view-card").append(`
+    <p>${USER_RECIPES[index].recipeName}</p>
+
+  `)
+  console.log(USER_RECIPES[index].recipeName);
+
+
+ }
+
     return {
         changePage : _changePage,
-        yourRecipe : _yourRecipe,
+        loadYour : _loadYour,
         loadBrowse: _loadBrowse,
+        loadView : _loadView,
 
     }
 

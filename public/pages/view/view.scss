@@ -1,0 +1,32 @@
+.view{
+    width: 970px;
+
+    .top{
+        height: 421px;
+        width: 500px;
+        background-color: green;
+        position: relative;
+        .header{
+
+            h1{
+            transform: rotate(-90deg);
+            position: absolute;
+            left: -20px;
+           // margin: 0 auto;
+            bottom: 200px;
+
+
+            }
+            .image{
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                height: 421px;
+                width: 468px;
+                background-color: indigo;
+        
+                }
+        }
+
+    }
+}

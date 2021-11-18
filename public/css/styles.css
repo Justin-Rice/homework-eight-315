@@ -573,6 +573,22 @@ nav {
           flex-direction: column;
 }
 
+@media screen and (max-width: 1050px) {
+  .create {
+    width: 500px;
+  }
+  .create .general input, .create .ingredients input, .create .instructions input {
+    width: 500px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .create {
+    width: 300px;
+  }
+  .create .general input, .create .ingredients input, .create .instructions input {
+    width: 300px;
+  }
+}
 .home {
   width: 100%;
   height: 100vh;
@@ -1173,6 +1189,7 @@ nav {
   font-family: Caveat;
   font-size: 20px;
   position: relative;
+  cursor: pointer;
 }
 .your__holder #your-flex .flex .recipe__info {
   width: 224px;
@@ -1271,6 +1288,7 @@ nav {
   font-size: 20px;
   margin-top: -50px;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 @media screen and (max-width: 1050px) {
   .your__holder {
@@ -1333,4 +1351,28 @@ nav {
   .your #your-flex .flex .recipe__info .prep .servings {
     padding-top: 10px;
   }
+}
+.view {
+  width: 970px;
+}
+.view .top {
+  height: 421px;
+  width: 500px;
+  background-color: green;
+  position: relative;
+}
+.view .top .header h1 {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  position: absolute;
+  left: -20px;
+  bottom: 200px;
+}
+.view .top .header .image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 421px;
+  width: 468px;
+  background-color: indigo;
 }

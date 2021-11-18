@@ -10,61 +10,27 @@ var USER_RECIPES = [
         "recipePrep": " 1h 24 min",
         "recipeServings": "4"
       },
+      {
+        "recipeName": "Supreme Pizza",
+        "recipeDescription": "Make Pizza night super duper out of this world wigth homemad pizza. this recipe is supreme with vegetables and two types of meat",
+        "recipeImage": "recipe-pizza.jpg",
+        "recipePrep": " 1h 24 min",
+        "recipeServings": "4"
+      },
+      
       
       
 
 ];
 
-function pain(){
-    $.getJSON("data/data.json", function(recipes){
 
-        $.each(USER_RECIPES, function(index, recipe){
-            //console.log(recipe.recipeImage)
-            console.log(recipe);
-            console.log(recipe.recipeName)
-            $("#your-flex").append(`
-            <div class="flex">
-            <div class="recipe">
-            <div class="recipe__image" style="
-            background-image: url(../img/${recipe.recipeImage});
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;">
-            <div class="button" id="${index}" onclick="viewRecipe(${index})">View
-            </div>
-            </div>
-            <div class="recipe__info">
-              <div class="name">${USER_RECIPES[index].recipeName}</div>
-              <div class="description">${USER_RECIPES[index].recipeDescription}
-              </div>
-              <div class="prep">
-                <div class="time">
-                  <img src="../img/time.svg">
-                  <div class="time__info"> ${USER_RECIPES[index].recipePrep}</div>
-                </div>
-                <div class="servings">
-                  <img src="../img/servings.svg">
-                  <div class="servings__info"> ${USER_RECIPES[index].recipeServings} servings
-                </div>
-              </div>
-              </div>
-            </div>
-          </div>
-          <div class="button-holder">
-          <div class="button" id="edit" onclick="editRecipe(${index})">Edit</div>
-          <div class="button" id="$delete" onclick="deleteRecipe(${index})">Delete</div>
-          </div>
-        </div>
-          
-            `)
-          // $("#your-flex").append(`<p class="pain" >pain</p>`)
-          console.log("wacj")
-    
-    
-        });
-      });
+
+function viewRecipe(index){
+ 
+  MODEL.changePage("view", MODEL.loadView(index));
+ 
+  
 }
-
 
 function route(){
     let hashTag = window.location.hash;
@@ -78,8 +44,11 @@ function route(){
         MODEL.changePage("browse", MODEL.loadBrowse);      
 
     }else if(pageID === "your"){
-        MODEL.changePage("your",MODEL.yourRecipe);
-         
+        MODEL.changePage("your",MODEL.loadYour);
+
+    }else if(pageID === "view"){
+        
+        
       
               
     }else{
