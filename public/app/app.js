@@ -2,43 +2,151 @@ var ingredNum = 4;
 var instructNum = 4;
 var loggedIn = false;
 
+var IMAGES = ["recipe-pilaf.jpg","recipe-burger.jpg", "recipe-pizza.jpg","recipe-chowmein.jpg" ]
+
 var USER_RECIPES = [
     {
         "recipeName": "Supreme Pizza",
         "recipeDescription": "Make Pizza night super duper out of this world wigth homemad pizza. this recipe is supreme with vegetables and two types of meat",
         "recipeImage": "recipe-pizza.jpg",
         "recipePrep": " 1h 24 min",
-        "recipeServings": "4"
+        "recipeServings": "4",
+        "recipeIng": ["1/4 batch pizza dough", "2 tablespoons Last-Minute Pizza Sauce,", "1 cup cooked and crumbled Italian sausage", "2 large mushrooms, sliced" ],
+        "recipeIns": ["Preheat the oven to 475°. Spray pizza pan with nonstick cooking or line a baking sheet with parchment paper.", "Flatten dough into a thin round and place on the pizza pan.", "Spread pizza sauce over the dough." ,"Layer the toppings over the dough in the order listed "]
       },
-      {
-        "recipeName": "Supreme Pizza",
-        "recipeDescription": "Make Pizza night super duper out of this world wigth homemad pizza. this recipe is supreme with vegetables and two types of meat",
-        "recipeImage": "recipe-pizza.jpg",
-        "recipePrep": " 1h 24 min",
-        "recipeServings": "4"
-      },
-      
-      
-      
-
 ];
 
 
 
 function viewRecipe(index){
- 
-  MODEL.changePage("view", MODEL.loadView(index));
- 
+
+  MODEL.changePage("view");
+  setTimeout(function(){MODEL.loadView(index)}, 80);
+
+}
+
+function loadEditRecipe(index){
+  
+  MODEL.changePage("edit");
+  setTimeout(function(){MODEL.loadEdit(index)}, 120);
+  
+
+}
+
+function deleteRecipe(index) {
+  USER_RECIPES.splice(index, 1)
+  MODEL.changePage("your");
+  setTimeout(function(){MODEL.loadYour(index)}, 120);
   
 }
+
+function submitEditRecipe(index){
+  //console.log(index)
+
+  var NEW_USER_RECIPES ={
+    "recipeName": "",
+    "recipeDescription": "",
+    "recipeImage": "",
+    "recipePrep": "",
+    "recipeServings": "",
+    "recipeIng": [],
+    "recipeIns": []
+  };
+  var x = document.getElementById("editImg");
+  var i = x.selectedIndex;
+  //console.log(i);
+  NEW_USER_RECIPES.recipeImage = IMAGES[i];
+  NEW_USER_RECIPES.recipeName = $("#recipe-name1").val();
+  NEW_USER_RECIPES.recipeDescription = $("#recipe-desc1").val();
+  NEW_USER_RECIPES.recipePrep = $("#recipe-time1").val();
+  NEW_USER_RECIPES.recipeServings = $("#recipe-serv1").val();
+  //console.log(NEW_USER_RECIPES.recipeName)
+
+
+  $(".addIng").map(function(){
+
+    NEW_USER_RECIPES.recipeIng.push($(this).val())
+   // console.log($(this).val());
+
+  })
+  $(".addIns").map(function(){
+    NEW_USER_RECIPES.recipeIns.push($(this).val())
+
+
+  })
+
+  USER_RECIPES.splice(index,0, NEW_USER_RECIPES)
+  USER_RECIPES.splice(index+1, 1 )
+  
+  //console.log(USER_RECIPES);
+
+  MODEL.changePage("your",MODEL.loadYour);
+
+}
+
+function createRecipe(){
+  
+
+  var NEW_USER_RECIPES ={
+    "recipeName": "",
+    "recipeDescription": "",
+    "recipeImage": "",
+    "recipePrep": "",
+    "recipeServings": "",
+    "recipeIng": [],
+    "recipeIns": []
+  };
+
+
+  var x = document.getElementById("createImg");
+  var i = x.selectedIndex;
+  //console.log(i);
+  NEW_USER_RECIPES.recipeImage = IMAGES[i];
+  
+  NEW_USER_RECIPES.recipeName = $("#recipe-name").val();
+  NEW_USER_RECIPES.recipeDescription = $("#recipe-desc").val();
+  NEW_USER_RECIPES.recipePrep = $("#recipe-time").val();
+  NEW_USER_RECIPES.recipeServings = $("#recipe-serv").val();
+  //console.log(NEW_USER_RECIPES.recipeName)
+
+
+  $(".addIng").map(function(){
+
+    NEW_USER_RECIPES.recipeIng.push($(this).val())
+   // console.log($(this).val());
+
+  })
+  $(".addIns").map(function(){
+    NEW_USER_RECIPES.recipeIns.push($(this).val())
+   // console.log($(this).val());
+
+  })
+  
+  
+
+
+  
+  USER_RECIPES.push(NEW_USER_RECIPES);
+  //console.log(USER_RECIPES);
+
+  MODEL.changePage("your",MODEL.loadYour);
+
+}
+
+
 
 function route(){
     let hashTag = window.location.hash;
     let pageID = hashTag.replace("#/","");
     //pageID holds page name
 
-    if(!pageID){
+    if(pageID === "view"){
+      //MODEL.changePage("view", MODEL.loadView);
+
+
+      }else if( !pageID){
         MODEL.changePage("home");
+        
 
     }else if(pageID === "browse"){
         MODEL.changePage("browse", MODEL.loadBrowse);      
@@ -46,11 +154,6 @@ function route(){
     }else if(pageID === "your"){
         MODEL.changePage("your",MODEL.loadYour);
 
-    }else if(pageID === "view"){
-        
-        
-      
-              
     }else{
         MODEL.changePage(pageID);
 
@@ -133,7 +236,6 @@ function createUser(){
   });
 
 
-//console.log("milkd");
 }
 
 function logInUser(){
@@ -203,10 +305,11 @@ function signOut(){
 }
 
 function initlistener(){
+
+ 
     $(window).on("hashchange",route);
 //when the hamburger menu is clicked, display the mobile nav
     $("nav .fa-bars").click(function(){
-        //console.log("nice")
         $(".mobile-nav").css("display", "flex");
         $(".mobile-nav").css("animation", "nav-in 1s");
     });
@@ -237,7 +340,7 @@ function underlineActivePage(){
 
 function addIngred(e){
     $(".ingredients").append(`
-    <input id="ind${ingredNum}" type="text" placeholder="Ingredient #${ingredNum}" />
+    <input class="addIng" id="ind${ingredNum}" type="text" placeholder="Ingredient #${ingredNum}" />
     `)
 
     ingredNum ++;  
@@ -246,13 +349,12 @@ function addIngred(e){
 
 function addInstruct(e){
     $(".instructions").append(`
-    <input id="ind${instructNum}" type="text" placeholder="Instruction #${instructNum}" />
+    <input class="addIns" id="ind${instructNum}" type="text" placeholder="Instruction #${instructNum}" />
     `)
 
     instructNum ++;  
 
 }
-
 
 
 $(document).ready(function(){

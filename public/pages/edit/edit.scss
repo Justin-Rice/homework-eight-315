@@ -1,4 +1,4 @@
-.create {
+.edit {
     width: 980px;
     margin: 0 auto;
     padding-bottom: 160px;
@@ -19,7 +19,7 @@
 
     .form{
         position: relative;
-        .create-recipe{
+        .edit-recipe{
             margin: 0 auto;
             text-align: center;
             background-color: $dark-pink;
@@ -135,7 +135,7 @@
 }
 
 @media screen and (max-width: 1050px) {
-    .create{
+    .edit{
 
         width: 500px;
 
@@ -158,7 +158,7 @@
 
 
 @media screen and (max-width: 550px) {
-    .create{
+    .edit{
 
         width: 300px;
 

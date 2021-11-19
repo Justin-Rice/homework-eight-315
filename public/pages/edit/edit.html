@@ -1,18 +1,30 @@
-<div class="create">
-  <h1>Hey Michael, edit your recipe!</h1>
+<div class="edit">
+  <h1>Hey Michael, create your recipe!</h1>
   <div class="form">
     <div class="general">
       <div class="attach" id="file">attach</div>
-      <select id="createImg" name="dropdown" placeholder="image">
+      <select id="editImg" name="dropdown" placeholder="image">
         <option>Pilaf</option>
         <option>Burger</option>
         <option>Pizza</option>
         <option>Chow Mein</option>
       </select>
-      <input id="recipe-name" type="text" placeholder="Recipe Name" />
-      <input id="recipe-desc" type="text" placeholder="Recipe Description" />
-      <input id="recipe-time" type="text" placeholder="Recipe Total Time" />
-      <input id="recipe-serv" type="text" placeholder="Recipe Serving Size" />
+      <input id="recipe-name1" type="text" placeholder="Edit Recipe Name" />
+      <input
+        id="recipe-desc1"
+        type="text"
+        placeholder="Edit Recipe Description"
+      />
+      <input
+        id="recipe-time1"
+        type="text"
+        placeholder="Edit Recipe Total Time"
+      />
+      <input
+        id="recipe-serv1"
+        type="text"
+        placeholder="Edit Recipe Serving Size"
+      />
     </div>
     <div class="ingredients">
       <div class="title">Enter Ingredients</div>
@@ -43,6 +55,5 @@
       />
       <div class="add" id="ins" onclick="addInstruct()">+</div>
     </div>
-    <div onclick="createRecipe()" class="create-recipe">Create Recipe</div>
   </div>
 </div>

@@ -505,6 +505,18 @@ nav {
   background-color: #EFA7A7;
   position: absolute;
 }
+.create .form select {
+  width: 980px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: black solid 2px;
+  height: 30px;
+  font-family: Lato;
+  font-size: 20px;
+  margin-top: 80px;
+  color: black;
+}
 .create .form input {
   width: 980px;
   background-color: transparent;
@@ -577,7 +589,7 @@ nav {
   .create {
     width: 500px;
   }
-  .create .general input, .create .ingredients input, .create .instructions input {
+  .create .general input, .create .general select, .create .ingredients input, .create .ingredients select, .create .instructions input, .create .instructions select {
     width: 500px;
   }
 }
@@ -585,7 +597,7 @@ nav {
   .create {
     width: 300px;
   }
-  .create .general input, .create .ingredients input, .create .instructions input {
+  .create .general input, .create .general select, .create .ingredients input, .create .ingredients select, .create .instructions input, .create .instructions select {
     width: 300px;
   }
 }
@@ -1117,6 +1129,9 @@ nav {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
 }
+.your a {
+  text-decoration: none;
+}
 .your__holder {
   width: 1100px;
   margin: 0 auto;
@@ -1353,26 +1368,363 @@ nav {
   }
 }
 .view {
-  width: 970px;
+  width: 1000px;
+  margin: 0 auto;
+  margin-top: 250px;
+  margin-bottom: 98px;
 }
 .view .top {
-  height: 421px;
-  width: 500px;
-  background-color: green;
+  min-height: 421px;
+  width: 970px;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
-.view .top .header h1 {
+.view .top .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  height: 421px;
+  width: 470px;
+}
+.view .top .header p {
+  margin-left: 0;
+  width: none;
+  text-align: center;
+  background-color: aliceblue;
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
   position: absolute;
-  left: -20px;
-  bottom: 200px;
+  bottom: 80px;
+  left: 15px;
+  width: 0px;
+  font-family: Lato-Black;
+  font-weight: 100;
+  font-size: 25px;
+  letter-spacing: 3px;
+  white-space: nowrap;
 }
 .view .top .header .image {
-  position: absolute;
-  right: 0;
+  position: relative;
+  left: 35px;
   bottom: 0;
   height: 421px;
+  width: 440px;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0))), url("../img/recipe-pizza.jpg");
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("../img/recipe-pizza.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+.view .top .info {
+  margin-bottom: 60px;
   width: 468px;
-  background-color: indigo;
+}
+.view .top .info h1 {
+  font-family: Lato-Black;
+  font-size: 25px;
+  font-weight: 100;
+  margin-bottom: 30px;
+}
+.view .top .info h2 {
+  font-family: Lato-Black;
+  font-size: 20px;
+  font-weight: 100;
+  margin-bottom: 30px;
+}
+.view .top .info p {
+  font-family: Caveat;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+.view .ingredients {
+  width: 935px;
+  margin-left: 35px;
+}
+.view .ingredients h1 {
+  font-family: Lato-Black;
+  font-size: 25px;
+  font-weight: 100;
+}
+.view .ingredients ul {
+  list-style-type: none;
+  margin-left: 0px;
+  font-family: Caveat;
+  font-size: 20px;
+}
+.view .instructions {
+  width: 935px;
+  margin-left: 35px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.view .instructions h1 {
+  font-family: Lato-Black;
+  font-size: 25px;
+  font-weight: 100;
+}
+.view .instructions ol {
+  margin-left: 20px;
+  font-family: Caveat;
+  font-size: 20px;
+}
+.view .button {
+  text-align: center;
+  background-color: #FFD972;
+  width: 127px;
+  height: 52px;
+  border-radius: 40px 40px;
+  line-height: 50px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+          box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  margin-top: 50px;
+  margin-left: 35px;
+  font-family: Caveat;
+  font-size: 20px;
+  position: relative;
+  left: 0;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1050px) {
+  .view {
+    width: 600px;
+  }
+  .view #view-card .top {
+    min-height: 900px;
+    width: 600px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .view #view-card .header {
+    position: relative;
+  }
+  .view #view-card .header p {
+    bottom: auto;
+    top: 320px;
+  }
+  .view .ingredients, .view .instructions {
+    width: 550px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .view {
+    width: 300px;
+  }
+  .view #view-card .top {
+    min-height: 600px;
+    width: 300px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .view #view-card .top .info {
+    width: 300px;
+  }
+  .view #view-card .header {
+    width: 300px;
+    height: 240px;
+    position: relative;
+  }
+  .view #view-card .header .image {
+    width: 251px;
+    height: 226px;
+  }
+  .view #view-card .header p {
+    z-index: 99;
+    bottom: auto;
+    top: 200px;
+    font-size: 20px;
+  }
+  .view .ingredients, .view .instructions {
+    width: 260px;
+    margin-left: 0;
+  }
+}
+.edit {
+  width: 980px;
+  margin: 0 auto;
+  padding-bottom: 160px;
+  margin-top: 200px;
+  font-family: Lato;
+  font-size: 20px;
+}
+.edit h1 {
+  font-family: Caveat;
+  font-size: 25px;
+  font-weight: 100;
+  position: relative;
+  top: 50px;
+}
+.edit .form {
+  position: relative;
+}
+.edit .form .edit-recipe {
+  margin: 0 auto;
+  text-align: center;
+  background-color: #EFA7A7;
+  font-family: Caveat;
+  width: 250px;
+  height: 52px;
+  border-radius: 40px 40px;
+  line-height: 50px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+          box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  font-size: 25px;
+  margin-top: 100px;
+}
+.edit .form .add {
+  height: 38px;
+  width: 38px;
+  border-radius: 20px;
+  color: white;
+  background-color: #EFA7A7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  cursor: pointer;
+  position: absolute;
+  right: 5px;
+  bottom: 10px;
+}
+.edit .form .attach {
+  height: 38px;
+  width: 110px;
+  border-radius: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  cursor: pointer;
+  font-family: Caveat;
+  top: 67px;
+  right: 5px;
+  background-color: #EFA7A7;
+  position: absolute;
+}
+.edit .form select {
+  width: 980px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: black solid 2px;
+  height: 30px;
+  font-family: Lato;
+  font-size: 20px;
+  margin-top: 80px;
+  color: black;
+}
+.edit .form input {
+  width: 980px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: black solid 2px;
+  height: 30px;
+  font-family: Lato;
+  font-size: 20px;
+  margin-top: 80px;
+  color: black;
+}
+.edit .form .title {
+  width: 100%;
+  position: relative;
+  top: 40px;
+}
+.edit .form .general {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.edit .form .ingredients {
+  margin-top: 90px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+.edit .form .instructions {
+  position: relative;
+  margin-top: 90px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media screen and (max-width: 1050px) {
+  .edit {
+    width: 500px;
+  }
+  .edit .general input, .edit .general select, .edit .ingredients input, .edit .ingredients select, .edit .instructions input, .edit .instructions select {
+    width: 500px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .edit {
+    width: 300px;
+  }
+  .edit .general input, .edit .general select, .edit .ingredients input, .edit .ingredients select, .edit .instructions input, .edit .instructions select {
+    width: 300px;
+  }
 }

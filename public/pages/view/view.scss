@@ -1,32 +1,228 @@
 .view{
-    width: 970px;
-
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 250px;
+    margin-bottom:98px ;
+    //background-color: orange ;
+    
     .top{
-        height: 421px;
-        width: 500px;
-        background-color: green;
+        min-height: 421px;
+        width: 970px;
+        //background-color: green;
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         .header{
-
-            h1{
+            display: flex;
+            align-items: left;
+            justify-content: left;
+            height: 421px;
+            width: 470px;
+           // background: blue;
+            p{
+                margin-left: 0;
+               width: none;
+               text-align: center;
+               background-color: aliceblue;
             transform: rotate(-90deg);
             position: absolute;
-            left: -20px;
            // margin: 0 auto;
-            bottom: 200px;
+            bottom: 80px;
+            left: 15px;
+            //z-index: 99;
+            width: 0px;
+            font-family: Lato-Black;
+            font-weight: 100;
+            font-size: 25px;
+            letter-spacing: 3px;
+            white-space: nowrap;
 
 
             }
             .image{
-                position: absolute;
-                right: 0;
+                position: relative;
+                left: 35px;
                 bottom: 0;
                 height: 421px;
-                width: 468px;
-                background-color: indigo;
+                width: 440px;
+               // background-color: indigo;
+               background-image: linear-gradient(
+                 to right,  
+                   rgba(0, 0, 0, 0.0),
+                   rgba(0, 0, 0, 0.0)
+                 ),
+               url("../img/recipe-pizza.jpg");
+               background-repeat: no-repeat;
+               background-position: center;
+               background-size: cover;
+               object-fit: fill;
         
                 }
+            
+        }
+        .info{
+            margin-bottom: 60px;
+            width: 468px;
+           // background-color: bisque;
+           // margin-right: 20px;
+           //position: relative;
+
+           h1{
+               font-family: Lato-Black;
+               font-size: 25px;
+               font-weight: 100;
+               margin-bottom: 30px;
+
+           }
+
+           h2{
+            font-family: Lato-Black;
+            font-size: 20px;
+            font-weight: 100;
+            margin-bottom: 30px;
+
+
+           }
+
+           p{
+               font-family: Caveat;
+               font-size: 20px;
+               margin-bottom: 30px;
+
+           }
+            
         }
 
+    }
+    .ingredients{
+        width: 935px;
+        margin-left: 35px;
+       // background-color:red ;
+        h1{
+            font-family: Lato-Black;
+            font-size: 25px;
+            font-weight: 100;
+
+        }
+        ul{
+            list-style-type: none;
+            margin-left: 0px;
+
+            font-family: Caveat;
+            font-size: 20px;
+
+        }
+
+    }
+    .instructions{
+        width: 935px;
+        margin-left: 35px;
+        align-items: center;
+        h1{
+            font-family: Lato-Black;
+            font-size: 25px;
+            font-weight: 100;
+
+        }
+         
+        ol{
+            margin-left: 20px;
+            font-family: Caveat;
+            font-size: 20px;  
+        }
+    }
+
+    .button{
+        
+        text-align: center;
+        background-color: $yellow;
+        width: 127px;
+        height: 52px;
+        border-radius: 40px 40px;
+        line-height: 50px;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;   
+        //display: none;
+        margin-top: 50px;
+        margin-left: 35px;
+        font-family: Caveat;
+        font-size: 20px;
+        position: relative;
+        left: 0;
+      
+        cursor: pointer;
+
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .view{
+        width: 600px;
+
+        #view-card{
+
+            .top{
+                min-height: 900px;
+                width: 600px;
+                flex-direction: column;
+
+
+
+            }
+
+            .header{
+                position: relative;
+                p{
+                    //z-index: 99;
+                    bottom: auto;
+                    top: 320px;
+                }
+            }
+        }
+        .ingredients , .instructions{
+            width: 550px;
+        }
+    }
+
+
+}
+
+@media screen and (max-width: 650px) {
+    .view{
+        width: 300px;
+
+        #view-card{
+
+            .top{
+                min-height: 600px;
+                width: 300px;
+                flex-direction: column;
+
+                .info{
+                    width: 300px;
+                }
+
+            }
+
+            .header{
+                width: 300px;
+                height: 240px;
+                position: relative;
+                .image{
+                    width: 251px;
+                    height: 226px;
+                }
+                p{
+                    z-index: 99;
+                    bottom: auto;
+                    top: 200px;
+                    font-size: 20px;
+                }
+            }
+        }
+        .ingredients , .instructions{
+            width: 260px;
+            margin-left: 0;
+        }
     }
 }

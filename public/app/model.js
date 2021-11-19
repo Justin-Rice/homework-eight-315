@@ -1,7 +1,7 @@
 var MODEL = (function(){
     var _changePage = function(pageName, callback){
         $.get(`pages/${pageName}/${pageName}.html`, function(data){
-            //console.log(data)
+           // console.log(data)
             $("#app").html(data);
             if(callback){
               callback();
@@ -46,12 +46,10 @@ var MODEL = (function(){
 
  var _loadYour = function(){
 
-  // $.getJSON("data/data.json", function(recipes){
 
     $.each(USER_RECIPES, function(index, recipe){
         //console.log(recipe.recipeImage)
         // console.log(recipe);
-        // console.log(recipe.recipeName)
         $("#your-flex").append(`
        <div class="flex">
         <div class="recipe">
@@ -61,7 +59,7 @@ var MODEL = (function(){
         background-position: center;
         background-size: cover;">
         <a href="#/view">
-        <div class="button" id="${index}" onclick="viewRecipe(${index})">View
+        <div class="button" onclick="viewRecipe(${index})" id="${index}">View
         </div>
         </a>
         </div>
@@ -83,18 +81,16 @@ var MODEL = (function(){
         </div>
       </div>
       <div class="button-holder">
-      <div class="button" id="edit" onclick="editRecipe(${index})">Edit</div>
-      <div class="button" id="delete" onclick="deleteRecipe(${index})">Delete</div>
+      <a href="#/edit">
+      <div class="button" id="edit${index}" onclick="loadEditRecipe(${index})">Edit</div>
+      </a>
+      <div class="button" id="delete${index}" onclick="deleteRecipe(${index})">Delete</div>
       </div>
     </div>
       
         `)
-      // $("#your-flex").append(`<p class="pain" >pain</p>`)
-      //console.log("wacj")
-
 
     });
-  // });
 
     
     
@@ -102,17 +98,75 @@ var MODEL = (function(){
 
  }
 
- var _loadView = function(index){
+ var _loadView =  function(index){
   $("#view-card").append(`
-    <p>${USER_RECIPES[index].recipeName}</p>
+    
+    <div class="top">
+    <div class="header">
+      <p>${USER_RECIPES[index].recipeName}</p>
+      <div class="image" style="
+      background-image: 
+      url(../img/${USER_RECIPES[index].recipeImage});
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      "
+      ></div>
+    </div>
+    <div class="info">
+      <h1>Description:</h1>
+      <p>
+      ${USER_RECIPES[index].recipeDescription}
+      </p>
+      <h2>Total Time:</h2>
+      <p>      
+      ${USER_RECIPES[index].recipePrep}
+      </p>
+      <h2>Servings:</h2>
+      <p>     
+       ${USER_RECIPES[index].recipeServings}
+       servings</p>
+    </div>
+  </div>
 
+
+
+  
+  <div class="ingredients" >
+    <h1>Ingredients:</h1>
+    <ul id ="viewIngred">
+      
+    </ul>
+  </div>
+  <div class="instructions">
+    <h1>Instructions:</h1>
+    <ol id="viewInstruct">
+    </ol>
+  </div>
+  <div class="button" onclick="editRecipe()">Edit Recipe</div>
   `)
-  console.log(USER_RECIPES[index].recipeName);
 
+  $.each(USER_RECIPES[index].recipeIng, function(indexs, ingred){
+    $("#viewIngred").append(`
+    <li>${ingred}</li>
+   `)
+  })
 
+  $.each(USER_RECIPES[index].recipeIns, function(indexs, ins){
+    $("#viewInstruct").append(`
+    <li>${ins}</li>
+   `)
+  })
+ }
+
+ var _loadEdit = function(index){
+
+ $(".form").append(`<div onclick="submitEditRecipe(${index})" class="edit-recipe" >Create Recipe</div>
+  `);  
  }
 
     return {
+        loadEdit   :  _loadEdit,
         changePage : _changePage,
         loadYour : _loadYour,
         loadBrowse: _loadBrowse,
