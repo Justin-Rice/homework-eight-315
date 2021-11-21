@@ -58,7 +58,7 @@ var MODEL = (function(){
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;">
-        <a href="#/view">
+        <a style="text-decoration: none; color: black;" "href="#/view">
         <div class="button" onclick="viewRecipe(${index})" id="${index}">View
         </div>
         </a>
@@ -81,7 +81,7 @@ var MODEL = (function(){
         </div>
       </div>
       <div class="button-holder">
-      <a href="#/edit">
+      <a style="text-decoration: none; color: black;"  href="#/edit">
       <div class="button" id="edit${index}" onclick="loadEditRecipe(${index})">Edit</div>
       </a>
       <div class="button" id="delete${index}" onclick="deleteRecipe(${index})">Delete</div>

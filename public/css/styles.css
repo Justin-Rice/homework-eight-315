@@ -29,6 +29,10 @@ h1, h2, h3, h4, h5, h5, h6, p {
   font-family: "Lato-Black";
   src: url(../fonts/Lato-Black.ttf);
 }
+@font-face {
+  font-family: "Lato-Light";
+  src: url(../fonts/Lato-Light.ttf);
+}
 .swal2-shown {
   font-family: Lato;
 }
@@ -512,7 +516,7 @@ nav {
   border: none;
   border-bottom: black solid 2px;
   height: 30px;
-  font-family: Lato;
+  font-family: Lato-light;
   font-size: 20px;
   margin-top: 80px;
   color: black;
@@ -524,7 +528,7 @@ nav {
   border: none;
   border-bottom: black solid 2px;
   height: 30px;
-  font-family: Lato;
+  font-family: Lato-Light;
   font-size: 20px;
   margin-top: 80px;
   color: black;
@@ -533,6 +537,7 @@ nav {
   width: 100%;
   position: relative;
   top: 40px;
+  font-family: Lato-Black;
 }
 .create .form .general {
   position: relative;
@@ -999,7 +1004,7 @@ nav {
   top: 20px;
 }
 .login .form__flex .form__holder .head__holder p.head {
-  font-family: Lato;
+  font-family: Lato-Black;
   font-size: 30px;
   text-align: left;
   position: relative;
@@ -1164,6 +1169,7 @@ nav {
           flex-direction: row;
 }
 .your__holder #your-flex .flex .recipe {
+  text-decoration: none;
   width: 524px;
   height: 263px;
   margin-bottom: 50px;
@@ -1639,7 +1645,7 @@ nav {
   border: none;
   border-bottom: black solid 2px;
   height: 30px;
-  font-family: Lato;
+  font-family: Lato-Light;
   font-size: 20px;
   margin-top: 80px;
   color: black;
@@ -1651,7 +1657,7 @@ nav {
   border: none;
   border-bottom: black solid 2px;
   height: 30px;
-  font-family: Lato;
+  font-family: Lato-Light;
   font-size: 20px;
   margin-top: 80px;
   color: black;
@@ -1660,6 +1666,7 @@ nav {
   width: 100%;
   position: relative;
   top: 40px;
+  font-family: Lato-Black;
 }
 .edit .form .general {
   position: relative;

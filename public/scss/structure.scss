@@ -27,6 +27,10 @@ h1, h2, h3, h4, h5, h5, h6, p{
   font-family:'Lato-Black' ;
   src: url(../fonts/Lato-Black.ttf);
 }
+@font-face {
+  font-family:'Lato-Light';
+  src: url(../fonts/Lato-Light.ttf);
+}
 
 .swal2-shown{
   font-family: Lato;
